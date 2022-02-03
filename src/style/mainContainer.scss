@@ -2,5 +2,10 @@
 
 main {
     height: calc(100vh - 80px);
+    overflow: auto;
     background-color: $gray;
+
+    .container {
+        height: 100%;;
+    }
 }

@@ -10,5 +10,21 @@ header {
         h2 {
             color: $red;
         }
+
+        .search-container {
+
+            height: 40px;
+
+            .button {
+                height: 100%;
+                background-color: orange;
+                cursor: pointer;
+            }
+
+            input {
+                height: 100%;
+                outline: 0;
+            }
+        }
     }
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <header-container />
-    <main-container />
+    <header-container @search="getFilm"/>
+    <main-container :films="films"/>
   </div>
 </template>
 
@@ -27,9 +27,9 @@ export default {
     }
   },
   methods: {
-    getFilm() {
+    getFilm(searchInput) {
 
-      axios.get('https://api.themoviedb.org/3/search/movie?query=title&api_key=6ca0c213ec5356631229b6b4eff3a90e')
+      axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=6ca0c213ec5356631229b6b4eff3a90e`)
           .then ( (res) => {
             this.films = res.data.results
           })
