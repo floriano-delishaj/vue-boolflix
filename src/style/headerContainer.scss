@@ -1,0 +1,14 @@
+@import '@/style/variables.scss';
+
+header {
+    height: 80px;
+    background-color: $black;
+
+    .container {
+        height: 100%;
+
+        h2 {
+            color: $red;
+        }
+    }
+}
