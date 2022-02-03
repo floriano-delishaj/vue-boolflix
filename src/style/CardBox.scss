@@ -1,9 +1,8 @@
 @import '@/style/variables.scss';
 
-.col-3 {
+.card-container {
     .card-box {
-        width: 302px;
-        height: 402px;
+
         border: 1px solid $card-info;
         position: relative;
 
@@ -25,8 +24,8 @@
     }
     a {
         img {
-            width: 300px;
-            height: 400px;
+            height: 100%;
+            width: 100%;
         }
     }
 

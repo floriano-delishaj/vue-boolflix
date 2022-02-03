@@ -1,5 +1,5 @@
 <template>
-  <div class="col-3 d-flex justify-content-center my-3">
+  <div class="card-container col-lg-2 col-md-4 col-sm-6 col-12 d-flex justify-content-center my-3">
     <div class="card-box">
         <div class="info-film px-3">
             <div><strong>Titolo</strong>: {{film.title}}</div>
