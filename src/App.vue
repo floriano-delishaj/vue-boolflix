@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <header-container @search="getFilm"/>
+    <header-container @search="search"/>
+    <img src="https://flagcdn.com/w20/it.png" alt="">
     <main-container :films="films"/>
   </div>
 </template>
@@ -23,19 +24,41 @@ export default {
   },
   data() {
     return {
-      films : []
+      films : [],
+      series: [],
+      api_key: '6ca0c213ec5356631229b6b4eff3a90e',
     }
   },
   methods: {
-    getFilm(searchInput) {
+    async callApi(type, query) {
+      const params = {
+        query: query,
+        api_key: this.api_key,
+      }
 
-      axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchInput}&api_key=6ca0c213ec5356631229b6b4eff3a90e`)
-          .then ( (res) => {
-            this.films = res.data.results
-          })
+      const results = await axios.get(`https://api.themoviedb.org/3/search/${type}`, {params})
+        .then( (res) =>{
+          return res.data.results;
+        })
+
+      return results;
+    },
+
+    search(query) {
+      this.searchFilms(query)
+      this.searchSeries(query)
+    },
+
+    async searchFilms(query) {
+      this.films = await this.callApi('movie', query)
+    },
+
+    async searchSeries(query) {
+      this.series = await this.callApi('tv', query)
     }
   }
 }
+
 </script>
 
 <style lang="scss">
