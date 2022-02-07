@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <header-container @search="search"/>
-    <img src="https://flagcdn.com/w20/it.png" alt="">
     <main-container :films="films"/>
   </div>
 </template>
